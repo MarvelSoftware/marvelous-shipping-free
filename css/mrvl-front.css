@@ -1,0 +1,200 @@
+.fast-msg-style {
+    margin: 0 !important;
+    padding: 0;
+    padding-right: 5px !important;
+    cursor: pointer;
+    min-height: 50px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+.fast-msg-style:hover {
+    background-color: antiquewhite;
+}
+
+.fast-msg-style input {
+    padding: 0 !important;
+    height: 20px;
+    width: 20px;
+    outline: none !important;
+    cursor: pointer;
+}
+.fast-msg-style label {
+    line-height: 1.2 !important;
+    cursor: pointer;
+}
+.hidden {
+    display: none !important;
+}
+
+/* Style for disabled Select2 options in the dropdown list */
+.select2-results__option[aria-disabled="true"] {
+    color: red !important; /* Override default gray */
+    text-decoration: line-through !important; /* Add a line-through */
+    cursor: not-allowed !important; /* Indicate disabled with cursor */
+    font-weight: 400 !important;
+}
+
+/* Style for the selected disabled option in the Select2 input box */
+.select2-selection__rendered .custom-disabled-option {
+    color: red !important;
+    text-decoration: line-through !important;
+    font-weight: 400 !important;
+}
+.custom-tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 1000;
+    pointer-events: none; /* Prevent the tooltip from interfering with mouse events */
+    white-space: nowrap;
+    display: none;
+}
+
+#marvelous-floor-fees-msg,
+#marvelous-weight-fees-msg,
+#marvelous-city-fees-msg {
+    font-size: 0.8em !important;
+    font-weight: 500 !important;
+}
+
+.exclamation-svg {
+    width: 80px; /* Adjust SVG size */
+    height: 80px;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    user-select: none;
+    opacity: 0.1;
+    transform: translateY(-50%);
+}
+
+.info-icon-container {
+    position: relative;
+    display: flex; /* Ensure container wraps around SVG */
+    align-items: center;
+    justify-content: center;
+}
+
+.info-window {
+    position: absolute;
+    top: 0%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 20020 !important; /* Ensure it's above export-buttons */
+    transform: translateX(-0%) translateY(20%) !important;
+    padding: 15px 20px;
+    border-radius: 5px;
+    width: 400px !important;
+    opacity: 0; /* Initially hidden */
+    pointer-events: none; /* Prevent interaction when hidden */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth fade and move */
+}
+/* Apply styles for devices with a maximum width of 768px (common mobile breakpoint) */
+@media screen and (max-width: 768px) {
+    .info-window {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 20020 !important; /* Ensure it's above export-buttons */
+        transform: translateY(20%) !important;
+        padding: 15px 20px;
+        border-radius: 5px;
+        width: 70vw !important;
+        opacity: 0; /* Initially hidden */
+        pointer-events: none; /* Prevent interaction when hidden */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth fade and move */
+    }
+}
+.info-window.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateX(-30%) translateY(20px); /* Move to original position */
+    pointer-events: auto; /* Enable interaction */
+}
+
+.info-window h4 {
+    margin: 0 !important;
+    margin-bottom: 5px !important;
+    font-size: 17px;
+    font-family: Fredoka, sans-serif !important;
+    color: #00648f;
+    font-weight: 450 !important;
+}
+
+.info-window p {
+    margin: 0 !important;
+    font-size: 15px;
+    font-family: Fredoka, sans-serif !important;
+    font-weight: 400 !important;
+    color: #666;
+}
+
+.svg-style {
+    font-family: Fredoka, sans-serif !important;
+    margin-right: 15px;
+    /* stroke: rgba(0, 0, 0, 0.322); */
+    /* stroke-width: 10px; */
+    /* fill: rgb(46, 154, 255); */
+    transform: scale(0.5) translateY(-25%);
+}
+
+.svg-style g {
+    cursor: help;
+}
+
+.mrvl-lable-row {
+    display: flex;
+}
+
+/* discreteStore.isFetching */
+.small-spinner-icon {
+    width: 30px;
+    height: 30px;
+    /* Adjust size as needed */
+    animation: spin 1.5s linear infinite;
+    /* fill: #473cec; */
+    /* Gradient color */
+    -webkit-background-clip: text;
+    /* Safari/Chrome (old) */
+    background-clip: text;
+    z-index: 5001 !important;
+    /* Standard property */
+    /* fill: linear-gradient(135deg, #63c2ee, #207bc5); */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#mrvl_billing_entrance,
+#mrvl_shipping_entrance {
+    padding: 1rem 1.1rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    outline: 0;
+    line-height: normal;
+}
+#mrvl_billing_entrance option,
+#mrvl_shipping_entrance option {
+    font-size: 1.2rem !important;
+}
+.select2-container {
+    width: 100% !important;
+}
+.select2-results__option {
+    font-size: 1.2rem !important;
+}
