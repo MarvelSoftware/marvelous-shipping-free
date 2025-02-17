@@ -1,7 +1,7 @@
 # 🌍 Marvelous Shipping Free Version for WooCommerce (Israel)
 
 <p align="start">
-    <img src="https://mrvlsol.co.il/img/marvelous_shipping.webp" alt="Marvel Software Solutions" width="150" style="border-radius: 10px;">
+    <img src="https://mrvlsol.co.il/img/marvelous_shipping.webp" alt="Marvelous Shipping Logo" width="150" style="border-radius: 10px;">
 </p>
 
 ## **The most advanced WooCommerce shipping & postcodes plugin in Israel!** 🚀
@@ -12,7 +12,7 @@
 🔹 Upgrade to **Pro** or **Ultimate** for **cutting-edge automation, and powerful control over shipping calculations in Israel!**
 
 📢 **Quick Checkout for Premium Versions:**  
-💳 **[Upgrade in less than 2 minutes!](https://mrvlsol.co.il/)**
+💳 **[Upgrade in less than 2 minutes!](https://mrvlsol.co.il/?utm_source=github_free_repo)**
 
 ---
 
@@ -101,7 +101,7 @@
 -   **Pro** adds **advanced pricing, automation, and analytics** 🚀
 -   **Ultimate** unlocks **Advance shipping calculations, dynamic pricing, and cloud backups** 🌍
 
-💳 **[Upgrade now (Less than 2 min checkout!)](https://mrvlsol.co.il/)**
+💳 **[Upgrade now (Less than 2 min checkout!)](https://mrvlsol.co.il/?utm_source=github_free_repo)**
 
 ---
 
@@ -123,5 +123,7 @@ Need help? **We’ve got you covered!** 💡
 <br><br><br><br>
 
 <p align="start">
-    <img src="https://mrvlsol.co.il/img/logo.svg" alt="Marvel Software Solutions Logo" width="150">
+    <a href="https://mrvlsol.co.il/?utm_source=github_free_repo" target="_blank">
+        <img src="https://mrvlsol.co.il/img/logo.svg" alt="Marvel Software Solutions Logo" width="150">
+    </a>
 </p>
