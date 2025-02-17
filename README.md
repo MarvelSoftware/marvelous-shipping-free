@@ -88,23 +88,52 @@
 
 ---
 
-## 📥 Installation
+## 🚀 Installation Guide
 
-1. **Download & Install**:
+### **1️⃣ Download & Install:**
 
-    - Go to **WordPress Admin → Plugins → Add New**
-    - Search for **Marvelous Shipping**
-    - Click **Install Now**, then **Activate**
+#### **📌 Method 1️⃣: Install from WordPress Plugin Directory**
+
+1. Go to **WordPress Admin → Plugins → Add New**
+2. Search for **Marvelous Shipping**
+3. Click **Install Now**, then **Activate**
+
+#### **📌 Method 2️⃣: Manual Installation (via GitHub)**
+
+1. **Download the latest version** from this repository:
+    - Click **Code** → 📦 **Download ZIP**
+    - 🗂 **Extract** the contents to your local machine
+2. **Create the plugin folder if it does not exist:**
+    - Navigate to your WordPress installation and create:
+        ```
+        wp-content/plugins/marvelous-shipping/
+        ```
+3. 🚀 **Upload the extracted files to your server:**
+    - Use **FTP** or **File Manager** to navigate to:
+        ```
+        wp-content/plugins/marvelous-shipping/
+        ```
+    - 📌 **Place** the extracted files inside this folder
+4. ⚙️ Go to **WordPress Admin → Plugins**
+5. ✅ **Find Marvelous Shipping and click Activate**
 
 ⚠️ **NOTE:** First activation takes around **30-60 seconds** due to database configuration.
 
-2. **Configure the Plugin**:
+---
 
-    - Navigate to **WooCommerce → Settings → MarvelousShipping tab**
-    - Set up your **shipping rules, pricing, and restrictions**
-    - Adjust settings for **cities, streets, and checkout fields**
+### **2️⃣ Configure the Plugin:**
 
-3. **Done!** 🎉 Your store is now ready with **advanced shipping controls.**
+🛠 **Setup your shipping rules & restrictions:**
+
+-   Go to **WooCommerce → Settings → Marvelous Shipping** 🏪
+-   Set up **shipping rules, pricing, and restrictions** 🚚
+-   Adjust settings for **cities, streets, and checkout fields** 📍
+
+---
+
+### **3️⃣ You're All Set! 🎉**
+
+Your store is now ready with **advanced shipping controls** 🏆🚀
 
 ---
 
