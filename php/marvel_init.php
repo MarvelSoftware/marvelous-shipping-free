@@ -191,7 +191,9 @@ function marvelous_shipping_activate() {
             ");
         }
 
-        include_once(plugin_dir_path(__FILE__) . "../cities/IL_cities.php");
+        if (!get_cities_file(__FUNCTION__)) {
+            return;
+        }
         // Handle null errors
         if ($israel_heb2en === null || $city2district === null || $israel_districts_heb2en === null) {
             marvelLog('marvelous_shipping_activate: null params!');

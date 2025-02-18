@@ -64,11 +64,9 @@ function marvelous_shipping_save_settings() {
                 
         }
 
-        // Process restrictions changes
-        global $israel_districts_en2heb;
-        global $district2cities;
-
-        include_once(plugin_dir_path(__FILE__) . "../cities/IL_cities.php");
+        if (!get_cities_file(__FUNCTION__)) {
+            return;
+        }
 
         foreach ($restrictionsChanges as $change) {
             $generate_new_file = true;

@@ -480,10 +480,10 @@ if ( (is_multisite() && array_key_exists('woocommerce/woocommerce.php', get_site
             try {
 
                 // Check if the file exists
-                $file_path = normalize_path(plugin_dir_path(__FILE__) . "cities/IL_cities.php");
-                if (!file_exists($file_path)) {
+                if (!get_cities_file(__FUNCTION__)) {
                     marvelLog('enqueue admin scripts: cities file does not exist!');
                 }
+
                 // Check if we are on the WooCommerce settings page and your specific tab
                 if (isset($_GET['page']) && $_GET['page'] === 'wc-settings' && isset($_GET['tab']) && $_GET['tab'] === 'marvelous_shipping_plugin_settings') {
                     wp_enqueue_style(

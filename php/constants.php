@@ -22,6 +22,7 @@ $sslverify = true;
 $product_version = "1.0";
 $product_package = 'free';
 $diagnostic_url = 'https://api.mrvlsol.com/marvelous-shipping/log-diagnostics';
+$latest_cities_file_url = 'https://mrvlsol.com/marvelous-shipping/IL_cities.php';
 
 $exclamation_svg = '<svg version="1.1" class="exclamation-svg" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">

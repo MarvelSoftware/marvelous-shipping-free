@@ -49,7 +49,10 @@ function kernel_customize_checkout_fields($fields) {
         // generate select2 city field
         global $israel_heb_cities;
         global $israel_heb2en;
-        include_once(plugin_dir_path(__FILE__) . "../cities/IL_cities.php");
+        // Check if the file exists
+        if (!get_cities_file(__FUNCTION__)) {
+            return;
+        }
         
         $streets = array( '' => __( 'בחרו עיר תחילה', 'woocommerce' ) . '&hellip;' );
         $user_options = get_user_options();
@@ -445,7 +448,10 @@ function kernel_log_order_to_marvelous_shipping_table($order_id) {
 
         global $wpdb;
         global $city2district;
-        include_once(plugin_dir_path(__FILE__) . "../cities/IL_cities.php");
+        if (!get_cities_file(__FUNCTION__)) {
+            return;
+        }
+        
 
         // Get the order object
         $order = wc_get_order($order_id);
@@ -633,6 +639,10 @@ function get_user_options() {
 function get_server_signature() {
     try{
         $file_path = normalize_path(plugin_dir_path(__FILE__) . "../cities/IL_cities.php"); // Adjust the path as needed
+
+        if (!get_cities_file(__FUNCTION__)) {
+            return;
+        }
 
         // Check if the file exists
         if (!file_exists($file_path)) {
@@ -884,13 +894,76 @@ function isMobile() {
 // =======================================================================================
 // =======================================================================================
 
+// =======================================================================================
+// =======================================================================================
+
+function get_cities_file($func_name) {
+    try {
+
+        // Ensure required WordPress file is loaded
+        if (!function_exists('download_url')) {
+            require_once ABSPATH . 'wp-admin/includes/file.php';
+        }
+        
+        global $latest_cities_file_url;
+        // Check if the file already exists
+        $folder_path = wp_normalize_path(plugin_dir_path(__FILE__) . "../cities/");
+        $file_path = $folder_path . "IL_cities.php";
+        // If file exists, return true
+        if (file_exists($file_path) && filesize($file_path) > 0) {
+            include_once($file_path);
+            return true;
+        }
+
+        // Use WP function to download the file
+        $tmp_file = download_url($latest_cities_file_url);
+
+        if (is_wp_error($tmp_file)) {
+            marvelLog($func_name . ": Failed to download cities file: " . $tmp_file->get_error_message());
+            return false;
+        }
+
+        // Ensure directory exists
+        if (!file_exists($folder_path)) {
+            mkdir($folder_path, 0755, true);
+        }
+
+        // Move the downloaded file
+        if (!rename($tmp_file, $file_path)) {
+            unlink($tmp_file); // Cleanup temp file if move fails
+            marvelLog($func_name . ": Failed to move the downloaded cities file to its destination.");
+            return false;
+        }
+
+        // Verify the file exists and has content
+        if (!file_exists($file_path) || filesize($file_path) === 0) {
+            marvelLog($func_name . ": The cities file is empty or not found after moving.");
+            unlink($file_path); // Remove invalid file
+            return false;
+        }
+
+        include_once($file_path);
+        return true;
+    } catch (\Throwable $th) {
+        logException($th, __FUNCTION__ . "," . $func_name);
+        return false;
+    }
+}
+
+// =======================================================================================
+// =======================================================================================
+
 function generate_site_cities_file() {
     try {
         global $wpdb;
         global $israel_cities;
         global $site_file_header;
         include_once(plugin_dir_path(__FILE__) . "constants.php");
-        include_once(plugin_dir_path(__FILE__) . "../cities/IL_cities.php");
+
+        // get cities file
+        if (!get_cities_file(__FUNCTION__)) {
+            return;
+        }
 
         // Handle database query errors
         if ($site_file_header === null || $israel_cities === null) {

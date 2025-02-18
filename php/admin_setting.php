@@ -14,7 +14,10 @@ function admin_settings_ui(){
         global $spinner_svg;
         global $product_version;
         include_once(plugin_dir_path(__FILE__) . "kernel.php");
-        include_once(plugin_dir_path(__FILE__) . "../cities/IL_cities.php");
+        // Check if the file exists
+        if (!get_cities_file(__FUNCTION__)) {
+            return;
+        }
         include_once(plugin_dir_path(__FILE__) . "constants.php");
 
         $user_options = get_user_options();
