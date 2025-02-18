@@ -444,8 +444,6 @@ function admin_settings_ui(){
             echo '</div>';
 
 
-            // Initialize a position counter
-
             // Start the scrollable container
             echo '<div class="rows-container">';
 

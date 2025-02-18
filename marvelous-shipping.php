@@ -321,7 +321,7 @@ if ( (is_multisite() && array_key_exists('woocommerce/woocommerce.php', get_site
         public function custom_shipping_method_label($label, $method) {
             try{
                 // Customize the label for specific shipping methods
-                if ($method->method_id === 'flat_rate') { // Replace 'flat_rate' with your method ID
+                if ($method->method_id === 'flat_rate') {
                     $label = 'לפי כתובת'; // Set your custom label
                 }
             
@@ -355,7 +355,6 @@ if ( (is_multisite() && array_key_exists('woocommerce/woocommerce.php', get_site
 
                 $response = [
                     'citiesAndStreets' => $cities_data['encryptedData'],
-                    // 'iv' => $cities_data['iv'],
                     'configSignature' => $file_sig,
                 ];
 
@@ -518,11 +517,11 @@ if ( (is_multisite() && array_key_exists('woocommerce/woocommerce.php', get_site
 
                     wp_localize_script('admin_settings', 'mrvlAdmin', [
                         'nonce' => wp_create_nonce('mrvl_nonce_action'),
-                        'questionSvg' => $question_svg, // Replace with actual question SVG
-                        'confirmSvg'  => $green_check_svg,  // Replace with actual confirm SVG
-                        'warningSvg'  => $warning_svg,  // Replace with actual warning SVG
-                        'smallSpinnerSvg'  => $small_spinner_svg,  // Replace with actual warning SVG
-                        'diagnosticsAllowed'  => $user_options['send_diagnostics_active'],  // Replace with actual warning SVG
+                        'questionSvg' => $question_svg, 
+                        'confirmSvg'  => $green_check_svg, 
+                        'warningSvg'  => $warning_svg,
+                        'smallSpinnerSvg'  => $small_spinner_svg,  
+                        'diagnosticsAllowed'  => $user_options['send_diagnostics_active'],
                         'ajaxurl' => admin_url('admin-ajax.php'),
                         'configSignature' => $file_sig
                     ]);
@@ -574,7 +573,7 @@ if ( (is_multisite() && array_key_exists('woocommerce/woocommerce.php', get_site
                         'spinnerSvg' => $small_spinner_svg,
                         'billingCountry' => WC()->customer->get_billing_country(),
                         'shippingCity' => WC()->customer->get_shipping_city(),
-                        'diagnosticsAllowed'  => $user_options['send_diagnostics_active']  // Replace with actual warning SVG
+                        'diagnosticsAllowed'  => $user_options['send_diagnostics_active'] 
                     ]);
                     
 
@@ -619,8 +618,7 @@ if ( (is_multisite() && array_key_exists('woocommerce/woocommerce.php', get_site
                 $fields['address_2']['priority'] = 60;
                 $fields['state']['priority'] = 70;
 
-                // change the addresses to not required
-                // $fields['address_1']['required'] = false;
+                // change the address 2 to not be required
                 $fields['address_2']['required'] = false;
 
                 return $fields;

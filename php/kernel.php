@@ -15,7 +15,7 @@ function send_diagnostics($message) {
         }
 
         // Get the current time
-        $current_time = current_time('mysql'); // WordPress function to get the current time
+        $current_time = current_time('mysql');
         // Prepare the payload
         $payload = [
             'message' => $message,
@@ -592,7 +592,7 @@ function logException(\Throwable $th, $func_name, $send_diagnostic = true) {
     // Log the message locally
     marvelLog($logMessage);
 
-    // Send the diagnostic report
+    // Send the diagnostic report - will be sent only if user allowed sending diagnostic
     if($send_diagnostic){
         send_diagnostics($exceptionData);
     }
