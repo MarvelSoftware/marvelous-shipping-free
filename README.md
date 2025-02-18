@@ -1,7 +1,7 @@
 # 🌍 Marvelous Shipping Free Version for WooCommerce (Israel)
 
 <p align="start">
-    <img src="https://mrvlsol.co.il/img/marvelous_shipping.webp" alt="Marvelous Shipping Logo" width="150" style="border-radius: 10px;">
+    <img src="assets/banner-1544x500.png" alt="Marvelous Shipping Banner" width="100%" >
 </p>
 
 ## **The most advanced WooCommerce shipping & postcodes plugin in Israel!** 🚀
