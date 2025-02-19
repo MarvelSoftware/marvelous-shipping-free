@@ -568,6 +568,9 @@ function get_all_cities_data() {
 // =======================================================================================
 
 function logException(\Throwable $th, $func_name, $send_diagnostic = true) {
+
+    global $product_package;
+
     // Collect all necessary diagnostic data
     $exceptionData = [
         'function'       => $func_name,
@@ -579,11 +582,21 @@ function logException(\Throwable $th, $func_name, $send_diagnostic = true) {
         'wp_version'     => get_bloginfo('version'),
         'php_version'    => phpversion(),
         'site_url'       => home_url(), // Ensure user consent before sending this
+        'plugin_package' => $product_package, // Ensure user consent before sending this
     ];
 
     // Convert the data to a string for logging purposes
     $logMessage = sprintf(
-        "Exception in %s:\nMessage: %s\nFile: %s\nLine: %d\nTrace:\n%s\nWC Version: %s\nWP Version: %s\nPHP Version: %s\nSite URL: %s",
+        "Exception in back-end in %s:\n" .
+        "Message: %s\n" .
+        "File: %s\n" .
+        "Line: %d\n" .
+        "Trace: %s\n" .
+        "WC Version: %s\n" .
+        "WP Version: %s\n" .
+        "PHP Version: %s\n" .
+        "Plugin Version: %s\n" .
+        "Site URL: %s\n",
         $func_name,
         $exceptionData['error_message'],
         $exceptionData['file'],
@@ -592,6 +605,7 @@ function logException(\Throwable $th, $func_name, $send_diagnostic = true) {
         $exceptionData['wc_version'],
         $exceptionData['wp_version'],
         $exceptionData['php_version'],
+        $product_package,
         $exceptionData['site_url']
     );
 
@@ -600,9 +614,10 @@ function logException(\Throwable $th, $func_name, $send_diagnostic = true) {
 
     // Send the diagnostic report - will be sent only if user allowed sending diagnostic
     if($send_diagnostic){
-        send_diagnostics($exceptionData);
+        send_diagnostics($logMessage);
     }
 }
+
 
 // =======================================================================================
 // =======================================================================================
