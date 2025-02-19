@@ -4,7 +4,7 @@
 * Plugin Name: Marvelous Shipping
 * Plugin URI: https://mrvlsol.co.il/?marvelous_shipping_details&utm_source=wp_admin_free_ver/
 * Description: תוסף חכם ומתקדם לניהול מחירי משלוחים בישראל עבור WooCommerce. מתאים לעסקים בכל הגדלים, עם אפשרויות התאמה אישית, קלות, ופשוטות.
-* Version: 1.0
+* Version: 1.0.1
 * Requires at least: 5.2
 * Requires PHP:      7.0
 * Requires Plugins: woocommerce
